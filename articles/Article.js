@@ -7,14 +7,15 @@ const Category = require("../categories/Category")// exportando o model para rel
 //criando a tabela no banco
 
 const Article = connection.define('articles',{
-  title:{
-    type: Sequelize.STRING,
-    allowNull: false,
-  },slug:{
+  title: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-    body:{
+  slug: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  body: {
     type:Sequelize.TEXT,
     allowNull: false,
   },
