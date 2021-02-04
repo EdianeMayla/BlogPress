@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Category = require("./category");
 const slugify = require("slugify");
+const adminAuth = require("../middleware/adminAuth");
 
-router.get("/admin/categories/new", (req, res) => {
+router.get("/admin/categories/new", adminAuth, (req, res) => {
   res.render("admin/categories/new");
 
 });
