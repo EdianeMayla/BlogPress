@@ -12,5 +12,18 @@
       </li>
       <% }) %>
     </ul>
-  
+    <% if(user){ %>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      </ul>
+   <% } else { %>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
+   <% } %>
+
   </nav>

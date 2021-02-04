@@ -36,6 +36,7 @@ router.post("/users/create", (req, res) => {
                 });
 
         }else{
+            req.flash('error', 'Usuário já existe!');
             res.redirect("/admin/users/create");
         }
     });
@@ -68,13 +69,16 @@ router.post("/authenticate", (req, res) => {
 
                 res.redirect("/admin/articles");
             }else{
-                res.rendirect("/login");
+
+                req.flash('error', 'Senha incorreta!');
+                res.redirect("/login");
             }
 
         }else{
-            res.rendirect("/login");
+            res.redirect("/login");
 
         }
+     
     });
 });
 

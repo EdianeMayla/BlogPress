@@ -29,6 +29,6 @@ Article.belongsTo(Category);//um artigo pertence a uma categoria
 
 // Atualizando o relacionamento no banco
 
-//Article.sync({force: true});
+Article.sync({force: true});
 
 module.exports = Article;

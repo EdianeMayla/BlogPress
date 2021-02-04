@@ -9,9 +9,13 @@
           <p class="lead">Esse é um exemplo de um blog</p>
           <hr class="my-4">
           <p>Um blog desenvolvido com Node.Js, express, bootstrap e Mysql.</p>
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a>
         </div>
         <hr>
+         <% if(articles.length == 0){ %>
+          <h3>Não existe artigo nessa categoria!</h3>
+         <% } %>
+         <hr>
         <% articles.forEach(article=> { %>
           <div class="card">
             <div class="card-header">

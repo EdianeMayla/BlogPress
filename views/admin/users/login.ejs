@@ -1,4 +1,6 @@
 <%- include ('../../partials/header.ejs') %>
+<%- include ('../../partials/navbarlogin.ejs') %>
+
 
 <div class="container">
     <hr>
@@ -7,7 +9,7 @@
                 <h2>Login Admin</h2>
         </div>
         <div class="card-body">
-            <form action="/users/create" method="POST">
+            <form action="/authenticate" method="POST">
                 <input class="form-control" name="email" type="email" placeholder="exemplo@seuemail.com"><br>
                 <input class="form-control" name="password" type="password" placeholder="*************"><br>
                 <button type="submit" class="btn btn-success btn-block">Logar</button>
@@ -15,6 +17,11 @@
 
         </div>
     </div>
+    <% if(messages.error) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= messages.error %>
+        </div>
+   <% } %>
 </div>
 
 

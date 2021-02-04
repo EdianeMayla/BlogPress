@@ -11,6 +11,11 @@ const usersController = require("./users/UsersController");
 const Article = require("./articles/Article");
 const Category = require("./categories/Category");
 const User = require("./users/User");
+const sessionUser = require("./middleware/sessionUser");
+const flash = require('express-flash-messages');
+
+
+app.use(flash());
 
 //view engine
 app.set('view engine', 'ejs');
@@ -21,6 +26,7 @@ app.use(session({
   secret: "testedeacesso", cookie: { maxAge: 1200000 } 
 }))
 
+app.use(sessionUser);
 //Static
 
 app.use(express.static('public'));
